@@ -65,6 +65,7 @@ async function run() {
     };
     // ! Use verify admin after verifyToken
     const verifyAdmin = async (req, res, next) => {
+      // ? Decoded
       const email = req.decoded.email;
       const query = { email: email };
       const user = await usersCollections.findOne(query);
